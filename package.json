@@ -1,0 +1,33 @@
+{
+  "name": "entel-support-chatbot",
+  "version": "1.0.0",
+  "description": "API REST inteligente de Soporte al Cliente automatizado para Entel Perú con Node.js, Express, MongoDB y Gemini 2.5 Flash",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "entel",
+    "gemini",
+    "ai",
+    "chatbot",
+    "express",
+    "mongodb",
+    "customer-support"
+  ],
+  "author": "Entel Dev Team",
+  "license": "ISC",
+  "dependencies": {
+    "@google/genai": "latest",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.5"
+  }
+}

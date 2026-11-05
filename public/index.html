@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asistente Virtual Entel Perú | Soporte Inteligente</title>
+  <meta name="description" content="Chatbot oficial de soporte al cliente automatizado de Entel Perú. Resuelve dudas de planes, bolsas, recibos y recargas con IA Gemini.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Header Corporativo Entel -->
+    <header class="entel-header">
+      <div class="header-left">
+        <div class="brand-logo">
+          <svg class="entel-logo-svg" viewBox="0 0 100 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="100" height="32" rx="6" fill="#002EFF"/>
+            <text x="12" y="22" font-family="'Inter', sans-serif" font-weight="900" font-size="20" fill="#FFFFFF" letter-spacing="-0.5">entel</text>
+            <circle cx="82" cy="16" r="5" fill="#FF7900"/>
+          </svg>
+        </div>
+        <div class="brand-info">
+          <h1 class="brand-title">Asistente Virtual Entel</h1>
+          <div class="status-indicator">
+            <span class="status-dot"></span>
+            <span class="status-text">En línea • Soporte 24/7 (Gemini 2.5)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <a href="https://wa.me/51994860000" target="_blank" rel="noopener noreferrer" class="btn-channel btn-whatsapp" title="WhatsApp Oficial Entel Perú">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M12.031 2C6.511 2 2.016 6.477 2.016 11.977c0 1.761.46 3.483 1.332 5.003L2 22l5.187-1.353a9.96 9.96 0 0 0 4.844 1.243h.004c5.518 0 10.013-4.477 10.013-9.977A9.95 9.95 0 0 0 12.031 2zm5.783 14.128c-.24.673-1.393 1.288-1.925 1.369-.49.074-1.127.104-3.633-.933-2.138-.885-3.52-3.056-3.626-3.198-.106-.142-.868-1.154-.868-2.202 0-1.047.549-1.562.744-1.776.196-.213.428-.266.57-.266.143 0 .285.002.41.008.132.006.309-.05.483.369.18.431.614 1.5.668 1.61.054.11.089.24.018.383-.072.143-.108.232-.215.358-.108.125-.227.28-.324.375-.108.106-.22.222-.095.436.125.214.557.917 1.196 1.486.822.731 1.516.958 1.73 1.065.214.107.339.089.464-.053.125-.143.536-.624.679-.838.143-.214.286-.178.482-.107.196.071 1.25.589 1.464.696.214.107.357.16.41.25.054.089.054.517-.186 1.19z"/>
+          </svg>
+          <span>WhatsApp 994 860 000</span>
+        </a>
+        <button id="clearChatBtn" class="btn-channel btn-clear" title="Reiniciar chat">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+          </svg>
+          <span>Limpiar</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Barra de Canales Rápidos Entel -->
+    <nav class="entel-subnav">
+      <div class="subnav-item">
+        <span class="subnav-badge">*144#</span>
+        <span class="subnav-label">Saldo y Bolsas Gratis</span>
+      </div>
+      <div class="subnav-item">
+        <span class="subnav-badge">123</span>
+        <span class="subnav-label">Atención Telefónica</span>
+      </div>
+      <div class="subnav-item">
+        <span class="subnav-badge">App</span>
+        <span class="subnav-label">Mi Entel Perú</span>
+      </div>
+      <div class="subnav-item">
+        <span class="subnav-badge">Web</span>
+        <span class="subnav-label">entel.pe</span>
+      </div>
+    </nav>
+
+    <!-- Contenedor Principal de Mensajes -->
+    <main class="chat-container" id="chatContainer">
+      <!-- Mensaje de bienvenida inicial -->
+      <div class="message-row message-bot">
+        <div class="avatar-bot">
+          <span class="avatar-text">E</span>
+        </div>
+        <div class="message-bubble">
+          <div class="message-author">Asistente Oficial Entel Perú</div>
+          <div class="message-text">
+            ¡Hola! 👋 Te damos la bienvenida al canal oficial de atención virtual de <strong>Entel Perú</strong>.
+            <br><br>
+            ¿En qué podemos ayudarte hoy? Puedo orientarte en:
+            <ul>
+              <li><strong>Planes Entel Power</strong> (S/ 29.90, 39.90, 49.90 y más)</li>
+              <li><strong>Consulta de saldo y bolsas</strong> de alta velocidad con <strong>*144#</strong></li>
+              <li><strong>Pago de recibos</strong> y facturación en la <strong>App Mi Entel</strong></li>
+              <li><strong>Activación de eSIM digital</strong> y chip prepago/postpago</li>
+              <li><strong>Portabilidad</strong> a Entel con delivery o eSIM en minutos</li>
+            </ul>
+          </div>
+          <div class="message-footer">
+            <span class="message-time" id="welcomeTime">Ahora</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Preguntas sugeridas / Quick Chips -->
+      <div class="chips-container" id="quickChips">
+        <div class="chips-title">Consultas frecuentes:</div>
+        <div class="chips-grid">
+          <button class="chip-btn" data-query="¿Cuáles son los planes Entel Power de S/ 29.90 y 39.90?">
+            📱 Planes Entel Power
+          </button>
+          <button class="chip-btn" data-query="¿Cómo consulto mi saldo y compro bolsas marcando *144#?">
+            ⚡ Saldo y Bolsas (*144#)
+          </button>
+          <button class="chip-btn" data-query="¿Cómo y dónde puedo pagar mi recibo Entel por internet?">
+            💳 Pago de Recibo Entel
+          </button>
+          <button class="chip-btn" data-query="¿Cómo puedo solicitar o migrar a una eSIM digital de Entel?">
+            📶 Migrar a eSIM Digital
+          </button>
+          <button class="chip-btn" data-query="Quiero cambiarme a Entel manteniendo mi número, ¿cómo es la portabilidad?">
+            🔄 Portabilidad a Entel
+          </button>
+          <button class="chip-btn chip-urgent" data-query="Tengo un cobro excesivo en mi recibo y exijo hablar con un asesor humano.">
+            ⚠️ Reclamo / Asesor Humano
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Indicador animado de "escribiendo" -->
+    <div class="typing-indicator" id="typingIndicator">
+      <div class="typing-bubble">
+        <span class="typing-text">Entel está respondiendo</span>
+        <div class="typing-dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Área de Entrada de Mensaje -->
+    <footer class="chat-input-area">
+      <form id="chatForm" class="chat-form">
+        <div class="input-wrapper">
+          <textarea
+            id="userInput"
+            rows="1"
+            placeholder="Escribe tu consulta sobre planes, recibos, bolsas, recargas..."
+            autocomplete="off"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" id="sendBtn" class="btn-send" title="Enviar mensaje">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+          </svg>
+        </button>
+      </form>
+      <div class="input-disclaimer">
+        <span>Canales oficiales: Marca <strong>*144#</strong> para consultas rápidas o descarga la <strong>App Mi Entel Perú</strong>.</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
