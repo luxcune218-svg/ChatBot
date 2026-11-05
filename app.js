@@ -15,6 +15,8 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
+app.set('trust proxy', 1);
+
 // 1. Seguridad con Helmet (permitiendo recursos estáticos del chat)
 app.use(
   helmet({
